@@ -1,0 +1,52 @@
+@import ../common
+
+// Name component
+
+$name-primary: $accent
+$name-secondary: $light
+$border-size: 0px
+$border-radius: 0px
+
+@mixin left
+    border-top-right-radius: 0
+    border-bottom-right-radius: 0
+    border-right: none
+
+@mixin right
+    border-top-left-radius: 0
+    border-bottom-left-radius: 0
+    border-left: none
+
+@mixin primary
+    background-color: transparent
+    color: $name-secondary
+    padding-top: $border-size
+
+@mixin secondary
+    background-color: $name-primary
+    color: $name-secondary
+    border: $border-size solid $name-secondary
+
+.name
+    $initial-padding: 0 8px
+    $hover-padding: 0 10px
+    $pad-diff: 2px
+
+    font-size: 1.4em
+    display: flex
+
+    > *
+        text-align: center
+        padding: $initial-padding
+        border-radius: $border-radius
+        transition: padding 0.75s
+        &:hover
+            padding: $hover-padding
+
+    .first
+        @include primary
+        @include left
+
+    .last
+        @include secondary
+        @include right

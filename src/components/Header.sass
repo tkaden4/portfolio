@@ -1,0 +1,46 @@
+@import ../common
+
+.header
+    width: 100%
+    color: $light
+    display: flex
+    align-items: baseline
+    justify-content: center
+    flex-wrap: wrap
+    padding: 10px 0
+    font-size: 1.3em
+    nav
+        display: flex
+        flex-wrap: wrap
+        flex-grow: 1
+        justify-content: space-around
+
+// Navbar component
+
+.nav-link a
+    $link-accent-color: $accent-light
+    $link-accent-size: 2px
+    margin: 15px
+
+    color: $light
+    text-decoration: none
+    position: relative
+    transition: color 0.2s
+
+    &:after
+        content: ""
+        position: absolute
+
+        left: 0
+        bottom: 0
+
+        background-color: $link-accent-color
+
+        width: 10px
+        height: $link-accent-size
+
+        transition: width 0.5s
+
+    &:hover
+        &:after
+            width: 100%
