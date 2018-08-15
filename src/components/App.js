@@ -34,6 +34,8 @@ const Logo = () =>
         <div className="dot" />
     </div>;
 
+const UnderConstruction = () => <div className="container padded">Under Construction</div>;
+
 export const App = () =>
     <div className="app-root">
         <div className="container">
@@ -44,7 +46,7 @@ export const App = () =>
                 </Link>
                 <nav>
                     <NavLink name="About" to="/about" />
-                    <NavLink name="Services" to="/services" />
+                    {/* <NavLink name="Services" to="/services" /> */}
                     <NavLink name="Projects" to="/projects" />
                     <NavLink name="Resume" to="/resume" />
                     <NavLink name="Contact" to="/contact" />
@@ -54,9 +56,9 @@ export const App = () =>
         <div className="body">
             <Switch>
                 <Route path="/about" component={About} />
-                <Route path="/projects" render={() => <span>Projects</span>} />
-                <Route path="/resume" render={() => <span>Resume</span>} />
-                <Route path="/services" render={() => <span>Services</span>} />
+                <Route path="/projects" component={UnderConstruction} />
+                <Route path="/resume" component={UnderConstruction} />
+                {/* <Route path="/services" render={() => <span>Services</span>} /> */}
                 <Route path="/contact" component={Contact} />
                 <Redirect to="/about" />
             </Switch>
