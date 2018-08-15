@@ -3,3 +3,23 @@
 @import Header
 @import Logo
 @import Name
+
+.app-root
+    display: flex
+    flex-flow: column nowrap
+
+    color: $light
+
+    min-height: 100vh
+
+    font-size: 15px
+    font-family: "Saira", "Cairo", "Play", Courier New, Courier, monospace
+
+    $gradient-top: linear-gradient(178deg, transparent 80%, lighten($dark, 5%) 80%)
+    $gradient-middle: linear-gradient(182deg, transparent 82%, lighten($dark, 10%) 82%)
+    $gradient-bottom: linear-gradient(180deg, transparent 82.5%, $accent 82.5%)
+
+    background: $gradient-top, $gradient-middle, $gradient-bottom, $dark
+
+.body
+    flex-grow: 0.7

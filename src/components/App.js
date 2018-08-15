@@ -1,7 +1,11 @@
 import React from "react";
 import { Switch, Redirect, Route, Link } from "react-router-dom";
+import { withRouter } from "react-router";
 
 import "./App.sass";
+
+import About from "./tabs/About";
+import Contact from "./tabs/Contact";
 
 const FIRST_NAME = "Kaden";
 const LAST_NAME = "Thomas";
@@ -15,10 +19,12 @@ const Name = ({ first, last }) =>
         <div className="last">{last}</div>
     </div>;
 
-const NavLink = ({ name, to }) =>
-    <div className="nav-link">
+const NavLink = withRouter(({ name, to, location }) => {
+    let classes = "nav-link" + (location.pathname === to ? " selected" : " ");
+    return <div className={classes}>
         <Link to={to}>{name}</Link>
     </div>;
+});
 
 const Logo = () =>
     <div className="logo">
@@ -29,7 +35,7 @@ const Logo = () =>
     </div>;
 
 export const App = () =>
-    <div className="app">
+    <div className="app-root">
         <div className="container">
             <div className="header">
                 {/* <Logo /> */}
@@ -44,13 +50,14 @@ export const App = () =>
                     <NavLink name="Contact" to="/contact" />
                 </nav>
             </div>
+        </div>
+        <div className="body">
             <Switch>
-                <Route exact path="/about" />
-                <Route path="/services" render={() => <span>Services</span>} />
+                <Route path="/about" component={About} />
                 <Route path="/projects" render={() => <span>Projects</span>} />
                 <Route path="/resume" render={() => <span>Resume</span>} />
-                <Route path="/contact" render={() => <span>Contact</span>} />
-                {/* default to /about */}
+                <Route path="/services" render={() => <span>Services</span>} />
+                <Route path="/contact" component={Contact} />
                 <Redirect to="/about" />
             </Switch>
         </div>

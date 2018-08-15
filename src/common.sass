@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Abel|Cairo|Muli|Play|Rajdhani|Saira|Lato')
 
+*
+    //outline: 1px solid white
+
 $small-font: "Lato"
 
 $darker-grey: #1a1a1c
@@ -9,3 +12,20 @@ $light: ghostwhite
 
 $accent: darken(rgb(118, 15, 200), 5%)
 $accent-light: lighten($accent, 5%)
+$accent-text: lighten($accent, 20%)
+
+$common-pad: 10px
+
+.padded
+    padding: $common-pad
+
+input[type="submit"]
+    background-color: $accent
+    font-family: "Saira"
+    border-radius: 0
+    color: $light
+    border: none
+    transition: background-color 0.2s
+    &:hover
+        background-color: lighten($accent, 15%)
+        color: inherit

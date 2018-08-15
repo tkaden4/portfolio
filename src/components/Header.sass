@@ -4,10 +4,11 @@
     width: 100%
     color: $light
     display: flex
+    padding: $common-pad 0
+    margin-top: $common-pad
     align-items: baseline
     justify-content: center
     flex-wrap: wrap
-    padding: 10px 0
     font-size: 1.3em
     nav
         display: flex
@@ -20,7 +21,6 @@
 .nav-link a
     $link-accent-color: $accent-light
     $link-accent-size: 2px
-    margin: 15px
 
     color: $light
     text-decoration: none
@@ -44,3 +44,7 @@
     &:hover
         &:after
             width: 100%
+
+.nav-link.selected a
+    &:after
+        width: 100%

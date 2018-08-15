@@ -5,23 +5,7 @@
 
 a
     text-decoration: none
-    &:visited
-        color: inherit
-
-html, body
-    color: $light
-
-    font-size: 15px
-    font-family: "Saira", "Cairo", "Play", Courier New, Courier, monospace
-
-    $gradient-top: linear-gradient(178deg, transparent 80%, lighten($dark, 5%) 80%)
-    $gradient-middle: linear-gradient(182deg, transparent 82%, lighten($dark, 10%) 82%)
-    $gradient-bottom: linear-gradient(180deg, transparent 82.5%, $accent 82.5%)
-
-    background: $gradient-top, $gradient-middle, $gradient-bottom, $dark
-    background-size: 100%
-    height: 100%
-    width: 100%
-
-    margin: 0
-    padding: 0
+    color: $accent-text
+    transition: color 0.2s
+    &:hover
+        color: lighten($accent-text, 15%)
