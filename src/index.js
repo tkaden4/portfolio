@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 
 import App from "./components/App";
 
@@ -13,8 +13,8 @@ if (!root_el) {
 }
 
 ReactDOM.render(
-    <BrowserRouter>
+    <HashRouter>
         <App />
-    </BrowserRouter>,
+    </HashRouter>,
     root_el
 );
